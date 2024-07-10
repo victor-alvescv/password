@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton+SC&display=swap');
+
+* {
+    font-family: "Anton SC";
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.keypad--wrapper {
+    background: url("./assets/metal.jpg");
+    width: 600px;
+    height: 800px;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    border: 40px solid rgb(77, 77, 77);
+    background-size: cover;
+    border-radius: 50px;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px
+}
+
+.display {
+    width: 400px;
+    height: 100px;
+    background-color: rgb(80, 134, 134);
+    margin-top: 50px;
+    font-size: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+}
+
+.display p {
+    margin-bottom: 20px;
+    font-weight: 400;
+    letter-spacing: 4px;
+    font-size: 120px;
+    font-family: sans-serif !important;
+}
+
+.numbers--wrapper {
+    background-color: rgb(41, 41, 41);
+    height: 450px;
+    width: 400px;
+    border-radius: 25px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.numbers {
+    width: 350px;
+    height: 400px;
+    background: url("./assets/metal.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    position: relative;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.green-red {
+    position: absolute;
+    background-color: rgb(34, 34, 34);
+    width: 200px;
+    left: 21%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.red {
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    background-color: red;
+}
+
+.green {
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    background-color: green;
+}
+
+.number {
+    background-color: gray;
+    color: white;
+    font-size: 64px;
+    margin: 20px;
+}
+
+.numbers--keys {
+    width: 300px;
+    width: 300px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    align-items: center;
+    justify-content: center;
+    max-width: 100px;
+}
