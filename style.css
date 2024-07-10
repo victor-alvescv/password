@@ -102,19 +102,43 @@ body {
 }
 
 .number {
-    background-color: gray;
+    background-color: rgb(46, 46, 46);
     color: white;
-    font-size: 64px;
-    margin: 20px;
+    font-size: 30px;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+    border: 3px solid transparent;
+    transition: all 150ms ease;
+}
+
+.number:hover {
+    background-color: rgb(36, 36, 36);
+    border-color: rgba(255, 255, 255, 0.795);
+}
+
+.number:active {
+    background-color: rgba(14, 14, 14, 0.911);
 }
 
 .numbers--keys {
-    width: 300px;
-    width: 300px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    align-items: center;
-    justify-content: center;
-    max-width: 100px;
+    gap: 10px;
+}
+
+.line {
+    width: 40px;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.13);
+    position: absolute;
+    bottom: 15%
 }
