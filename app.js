@@ -4,16 +4,26 @@ const second = document.querySelector(".second");
 const third = document.querySelector(".third");
 const fourth = document.querySelector(".fourth");
 let display = document.querySelector(".display");
-let arr = [];
-console.log(first);
+let arr = ["-", "-", "-", "-"];
 function keyClick(number) {
-    if (arr.length >= 4) {
-        return;
-    }
     arr.push(number);
     padChange(number);
-    console.log(arr);
+    if (display instanceof HTMLDivElement) {
+        display.innerHTML = `
+  <p class="first">${arr[0]}</p>
+              <p class="second">${arr[1]}</p>
+              <p class="third">${arr[2]}</p>
+              <p class="fourth">${arr[3]}</p>
+  `;
+    }
 }
 function padChange(numberPad) {
-    display = arr;
+    arr[0] = numberPad;
+}
+console.log(arr[0]);
+function deleteNumber() {
+    console.log("delete character");
+}
+function submitNumber() {
+    console.log("submit password");
 }

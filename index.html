@@ -9,12 +9,7 @@
   </head>
   <body>
     <div class="keypad--wrapper">
-      <div class="display">
-            <p class="first">-</p>
-            <p class="second">-</p>
-            <p class="third">-</p>
-            <p class="fourth">-</p>
-      </div>
+      <div class="display"></div>
       <div class="numbers--wrapper">
         <div class="numbers">
           <div class="green-red">
@@ -58,7 +53,7 @@
               <p class="number__key">9</p>
               <div class="line"></div>
             </div>
-            <div onclick="keyClick('del')" class="number">
+            <div onclick="deleteNumber()" class="number">
               <p class="number__key">del</p>
               <div class="line"></div>
             </div>
@@ -66,7 +61,7 @@
               <p class="number__key">0</p>
               <div class="line"></div>
             </div>
-            <div onclick="keyClick('ok')" class="number">
+            <div onclick="submitNumber()" class="number">
               <p class="number__key">ok</p>
               <div class="line"></div>
             </div>
