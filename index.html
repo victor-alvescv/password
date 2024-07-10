@@ -3,12 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Keypad</title>
     <link rel="stylesheet" href="style.css" />
     <script src="app.js" defer></script>
   </head>
   <body>
     <div class="keypad--wrapper">
+      <audio id="correct">
+        <source src="assets/correct2.mp3" type="audio/mp3">
+      </audio>
+      <audio id="wrong">
+        <source volume="0.2" src="assets/wrong.mp3" type="audio/mp3">
+      </audio>
       <div class="display"></div>
       <div class="numbers--wrapper">
         <div class="numbers">

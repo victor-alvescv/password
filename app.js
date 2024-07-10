@@ -3,10 +3,20 @@ const first = document.querySelector(".first");
 const second = document.querySelector(".second");
 const third = document.querySelector(".third");
 const fourth = document.querySelector(".fourth");
+const red = document.querySelector(".red");
+const green = document.querySelector(".green");
 let display = document.querySelector(".display");
 let arr = [];
-let answer = "1978"
-
+function audioAnswer(answer) {
+    const audioCorrect = document.querySelector("#correct");
+    const audioWrong = document.querySelector("#wrong");
+    if (answer === true) {
+        audioCorrect === null || audioCorrect === void 0 ? void 0 : audioCorrect.play();
+    }
+    else {
+        audioWrong === null || audioWrong === void 0 ? void 0 : audioWrong.play();
+    }
+}
 function keyClick(number) {
     if (arr.length < 4) {
         padChange(number);
@@ -22,26 +32,25 @@ function deleteNumber() {
     updateDisplay();
 }
 function submitNumber() {
-    if (arr.join("") === answer) {
-        display.style.color = "#6DDE1A"
+    if (arr.join("") === "1978") {
+        audioAnswer(true);
+        display.style.color = "#6DDE1A";
         setTimeout(() => {
-            resetDisplay()
-        }, 2000)
+            arr = [];
+            display.style.color = "white";
+            updateDisplay();
+        }, 1000);
     }
     else {
-        display.style.color = "red"
+        audioAnswer(false);
+        display.style.color = "red";
         setTimeout(() => {
-            resetDisplay()
-        }, 2000)
+            arr = [];
+            display.style.color = "white";
+            updateDisplay();
+        }, 1000);
     }
 }
-
-function resetDisplay() {
-    display.style.color = "white"
-    arr = [];
-    updateDisplay();
-}
-
 function updateDisplay() {
     display.innerHTML = `
   <p class="first">${arr[0] || "-"}</p>
