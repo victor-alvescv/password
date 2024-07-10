@@ -10,7 +10,10 @@
   <body>
     <div class="keypad--wrapper">
       <div class="display">
-        <p>- - - -</p>
+            <p class="first">-</p>
+            <p class="second">-</p>
+            <p class="third">-</p>
+            <p class="fourth">-</p>
       </div>
       <div class="numbers--wrapper">
         <div class="numbers">
@@ -19,52 +22,52 @@
             <div class="green"></div>
           </div>
           <div class="numbers--keys">
-            <div class="number">
-              <p>1</p>
+            <div onclick="keyClick(1)" class="number">
+              <p class="number__key">1</p>
               <div class="line"></div>
             </div>
-            <div class="number">
-              <p>2</p>
+            <div onclick="keyClick(2)" class="number">
+              <p class="number__key">2</p>
               <div class="line"></div>
             </div>
-            <div class="number">
-              <p>3</p>
+            <div onclick="keyClick(3)" class="number">
+              <p class="number__key">3</p>
               <div class="line"></div>
             </div>
-            <div class="number">
-              <p>4</p>
+            <div onclick="keyClick(4)" class="number">
+              <p class="number__key">4</p>
               <div class="line"></div>
             </div>
-            <div class="number">
-              <p>5</p>
+            <div onclick="keyClick(5)" class="number">
+              <p class="number__key">5</p>
               <div class="line"></div>
             </div>
-            <div class="number">
-              <p>6</p>
+            <div onclick="keyClick(6)" class="number">
+              <p class="number__key">6</p>
               <div class="line"></div>
             </div>
-            <div class="number">
-              <p>7</p>
+            <div onclick="keyClick(7)" class="number">
+              <p class="number__key">7</p>
               <div class="line"></div>
             </div>
-            <div class="number">
-              <p>8</p>
+            <div onclick="keyClick(8)" class="number">
+              <p class="number__key">8</p>
               <div class="line"></div>
             </div>
-            <div class="number">
-              <p>9</p>
+            <div onclick="keyClick(9)" class="number">
+              <p class="number__key">9</p>
               <div class="line"></div>
             </div>
-            <div class="number">
-              <p>del</p>
+            <div onclick="keyClick('del')" class="number">
+              <p class="number__key">del</p>
               <div class="line"></div>
             </div>
-            <div class="number">
-              <p>0</p>
+            <div onclick="keyClick(0)" class="number">
+              <p class="number__key">0</p>
               <div class="line"></div>
             </div>
-            <div class="number">
-              <p>ok</p>
+            <div onclick="keyClick('ok')" class="number">
+              <p class="number__key">ok</p>
               <div class="line"></div>
             </div>
           </div>
