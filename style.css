@@ -45,12 +45,10 @@ body {
     gap: 40px;
 }
 
-.display p {
-    margin-bottom: 20px;
+.first, .second, .third, .fourth {
+    font-family: "Anton SC";
     font-weight: 400;
-    letter-spacing: 4px;
-    font-size: 120px;
-    font-family: sans-serif !important;
+    font-size: 60px;
 }
 
 .numbers--wrapper {
@@ -144,3 +142,5 @@ body {
     position: absolute;
     bottom: 15%
 }
+
+
