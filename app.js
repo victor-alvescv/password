@@ -18,10 +18,16 @@ function audioAnswer(answer) {
     }
 }
 function keyClick(number) {
-    if (arr.length < 4) {
-        padChange(number);
+    if (arr.length === 4) {
+        console.log(arr.length);
+        submitNumber();
         updateDisplay();
-        console.log(arr);
+    }
+    else {
+        if (arr.length < 4) {
+            padChange(number);
+            updateDisplay();
+        }
     }
 }
 function padChange(numberPad) {

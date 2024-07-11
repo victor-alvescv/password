@@ -75,69 +75,70 @@
       </nav>
     </header>
     <section class="keypad">
-    <div class="keypad--wrapper">
-      <audio id="correct">
-        <source src="assets/correct2.mp3" type="audio/mp3" />
-      </audio>
-      <audio id="wrong">
-        <source volume="0.2" src="assets/wrong.mp3" type="audio/mp3" />
-      </audio>
-      <div class="display"></div>
-      <div class="numbers--wrapper">
-        <div class="numbers">
-          <div class="numbers--keys">
-            <div onclick="keyClick(1)" class="number">
-              <p class="number__key">1</p>
-              <div class="line"></div>
+      <div class="keypad--wrapper">
+        <audio id="correct">
+          <source src="assets/correct2.mp3" type="audio/mp3" />
+        </audio>
+        <audio id="wrong">
+          <source volume="0.2" src="assets/wrong.mp3" type="audio/mp3" />
+        </audio>
+        <div class="title--wrapper">
+          <p class="top--title">Enter Passcode</p>
+          <p class="top--subtitle">Your passcode is required to enable!</p>
+        </div>
+        <div class="display"></div>
+        <div class="numbers--wrapper">
+          <div class="numbers">
+            <div class="numbers--keys">
+              <div onclick="keyClick(1)" class="number">
+                <p class="number__key">1</p>
+              </div>
+              <div onclick="keyClick(2)" class="number">
+                <p class="number__key">2</p>
+                <div class="line">ABC</div>
+              </div>
+              <div onclick="keyClick(3)" class="number">
+                <p class="number__key">3</p>
+                <div class="line">DEF</div>
+              </div>
+              <div onclick="keyClick(4)" class="number">
+                <p class="number__key">4</p>
+                <div class="line">GHI</div>
+              </div>
+              <div onclick="keyClick(5)" class="number">
+                <p class="number__key">5</p>
+                <div class="line">JKL</div>
+              </div>
+              <div onclick="keyClick(6)" class="number">
+                <p class="number__key">6</p>
+                <div class="line">MNO</div>
+              </div>
+              <div onclick="keyClick(7)" class="number">
+                <p class="number__key">7</p>
+                <div class="line">PQRS</div>
+              </div>
+              <div onclick="keyClick(8)" class="number">
+                <p class="number__key">8</p>
+                <div class="line">TUV</div>
+              </div>
+              <div onclick="keyClick(9)" class="number">
+                <p class="number__key">9</p>
+                <div class="line">WXYZ</div>
+              </div>
+              <div
+                style="grid-column-start: 2;"
+                onclick="keyClick(0)"
+                class="number"
+              >
+                <p class="number__key">0</p>
+              </div>
             </div>
-            <div onclick="keyClick(2)" class="number">
-              <p class="number__key">2</p>
-              <div class="line"></div>
-            </div>
-            <div onclick="keyClick(3)" class="number">
-              <p class="number__key">3</p>
-              <div class="line"></div>
-            </div>
-            <div onclick="keyClick(4)" class="number">
-              <p class="number__key">4</p>
-              <div class="line"></div>
-            </div>
-            <div onclick="keyClick(5)" class="number">
-              <p class="number__key">5</p>
-              <div class="line"></div>
-            </div>
-            <div onclick="keyClick(6)" class="number">
-              <p class="number__key">6</p>
-              <div class="line"></div>
-            </div>
-            <div onclick="keyClick(7)" class="number">
-              <p class="number__key">7</p>
-              <div class="line"></div>
-            </div>
-            <div onclick="keyClick(8)" class="number">
-              <p class="number__key">8</p>
-              <div class="line"></div>
-            </div>
-            <div onclick="keyClick(9)" class="number">
-              <p class="number__key">9</p>
-              <div class="line"></div>
-            </div>
-            <div onclick="deleteNumber()" class="number">
-              <p class="number__key">DEL</p>
-              <div class="line"></div>
-            </div>
-            <div onclick="keyClick(0)" class="number">
-              <p class="number__key">0</p>
-              <div class="line"></div>
-            </div>
-            <div onclick="submitNumber()" class="number">
-              <p class="number__key">OK</p>
-              <div class="line"></div>
+            <div onclick="deleteNumber()">
+              <p class="delete__key">delete</p>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
   </body>
 </html>
