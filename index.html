@@ -3,9 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Keypad</title>
+    <title>Keypad - Prototype Project</title>
+    <link rel="icon" href="assets/Vue_Logo_Black.png" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="style2.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <script src="app.js" defer></script>
   </head>
   <body>
@@ -90,55 +92,90 @@
         <div class="numbers--wrapper">
           <div class="numbers">
             <div class="numbers--keys">
-              <div onclick="keyClick(1)" class="number">
+              <button onclick="keyClick(1)" class="number">
                 <p class="number__key">1</p>
-              </div>
-              <div onclick="keyClick(2)" class="number">
+              </button>
+              <button onclick="keyClick(2)" class="number">
                 <p class="number__key">2</p>
                 <div class="line">ABC</div>
-              </div>
-              <div onclick="keyClick(3)" class="number">
+              </button>
+              <button onclick="keyClick(3)" class="number">
                 <p class="number__key">3</p>
                 <div class="line">DEF</div>
-              </div>
-              <div onclick="keyClick(4)" class="number">
+              </button>
+              <button onclick="keyClick(4)" class="number">
                 <p class="number__key">4</p>
                 <div class="line">GHI</div>
-              </div>
-              <div onclick="keyClick(5)" class="number">
+              </button>
+              <button onclick="keyClick(5)" class="number">
                 <p class="number__key">5</p>
                 <div class="line">JKL</div>
-              </div>
-              <div onclick="keyClick(6)" class="number">
+              </button>
+              <button onclick="keyClick(6)" class="number">
                 <p class="number__key">6</p>
                 <div class="line">MNO</div>
-              </div>
-              <div onclick="keyClick(7)" class="number">
+              </button>
+              <button onclick="keyClick(7)" class="number">
                 <p class="number__key">7</p>
                 <div class="line">PQRS</div>
-              </div>
-              <div onclick="keyClick(8)" class="number">
+              </button>
+              <button onclick="keyClick(8)" class="number">
                 <p class="number__key">8</p>
                 <div class="line">TUV</div>
-              </div>
-              <div onclick="keyClick(9)" class="number">
+              </button>
+              <button onclick="keyClick(9)" class="number">
                 <p class="number__key">9</p>
                 <div class="line">WXYZ</div>
-              </div>
-              <div
-                style="grid-column-start: 2;"
+              </button>
+              <button
+                style="grid-column-start: 2"
                 onclick="keyClick(0)"
                 class="number"
               >
                 <p class="number__key">0</p>
-              </div>
+              </button>
             </div>
-            <div onclick="deleteNumber()">
-              <p class="delete__key">delete</p>
+            <div class="icons--bottom">
+              <button onclick="deleteNumber()">
+                <svg
+                  class="delete--icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 9.75 14.25 12m0 0 2.25 2.25M14.25 12l2.25-2.25M14.25 12 12 14.25m-2.58 4.92-6.374-6.375a1.125 1.125 0 0 1 0-1.59L9.42 4.83c.21-.211.497-.33.795-.33H19.5a2.25 2.25 0 0 1 2.25 2.25v10.5a2.25 2.25 0 0 1-2.25 2.25h-9.284c-.298 0-.585-.119-.795-.33Z"
+                  />
+                </svg>
+              </button>
+              <div onclick="submitNumber()">
+                <svg
+                  class="submit--icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M12 1.5a5.25 5.25 0 0 0-5.25 5.25v3a3 3 0 0 0-3 3v6.75a3 3 0 0 0 3 3h10.5a3 3 0 0 0 3-3v-6.75a3 3 0 0 0-3-3v-3c0-2.9-2.35-5.25-5.25-5.25Zm3.75 8.25v-3a3.75 3.75 0 1 0-7.5 0v3h7.5Z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>

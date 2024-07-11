@@ -1,10 +1,6 @@
 "use strict";
-const first = document.querySelector(".first");
-const second = document.querySelector(".second");
-const third = document.querySelector(".third");
-const fourth = document.querySelector(".fourth");
-const red = document.querySelector(".red");
-const green = document.querySelector(".green");
+const displayContent = document.querySelector(".display--content");
+const deleteIcon = document.querySelector(".delete--icon");
 let display = document.querySelector(".display");
 let arr = [];
 function audioAnswer(answer) {
@@ -17,17 +13,20 @@ function audioAnswer(answer) {
         audioWrong === null || audioWrong === void 0 ? void 0 : audioWrong.play();
     }
 }
-function keyClick(number) {
-    if (arr.length === 4) {
-        console.log(arr.length);
-        submitNumber();
-        updateDisplay();
+function checkNumbers() {
+    if (arr.length > 0) {
+        const deleteIcon = document.querySelector(".delete--icon");
+        deleteIcon.style.color = "#752dc7";
     }
-    else {
-        if (arr.length < 4) {
-            padChange(number);
-            updateDisplay();
-        }
+    else if (arr.length === 0) {
+        deleteIcon.style.color = "#ffffff1a";
+    }
+}
+function keyClick(number) {
+    if (arr.length < 4) {
+        padChange(number);
+        checkNumbers();
+        updateDisplay();
     }
 }
 function padChange(numberPad) {
@@ -36,37 +35,46 @@ function padChange(numberPad) {
 function deleteNumber() {
     arr.pop();
     updateDisplay();
+    checkNumbers();
 }
 function submitNumber() {
     if (arr.join("") === "1978") {
         audioAnswer(true);
-        display.style.color = "#6DDE1A";
+        const ball = document.querySelectorAll(".ball");
+        ball.forEach((ball) => {
+            ball.style.backgroundColor = "#6DDE1A";
+            ball.style.borderColor = "#6DDE1A";
+        });
         setTimeout(() => {
             arr = [];
-            display.style.color = "#ededed;";
+            checkNumbers();
             updateDisplay();
-        }, 1000);
+        }, 2000);
     }
     else {
         audioAnswer(false);
-        display.style.color = "red";
+        const ball = document.querySelectorAll(".ball");
+        ball.forEach((ball) => {
+            ball.style.backgroundColor = "red";
+            ball.style.borderColor = "red";
+        });
         setTimeout(() => {
             arr = [];
-            display.style.color = "#ededed;";
+            checkNumbers();
             updateDisplay();
         }, 1000);
     }
 }
 function updateDisplay() {
     display.innerHTML = `
-  <p class="second">${!arr[0] ? "<div class='ball--empty'></div>" : "<div class='ball'></div>"}</p>
-              <p class="second">${!arr[1]
+  <p class="display--content">${!arr[0] ? "<div class='ball--empty'></div>" : "<div class='ball'></div>"}</p>
+              <p class="display--content">${!arr[1]
         ? "<div class='ball--empty'></div>"
         : "<div class='ball'></div>"}</p>
-              <p class="second">${!arr[2]
+              <p class="display--content">${!arr[2]
         ? "<div class='ball--empty'></div>"
         : "<div class='ball'></div>"}</p>
-              <p class="second">${!arr[3]
+              <p class="display--content">${!arr[3]
         ? "<div class='ball--empty'></div>"
         : "<div class='ball'></div>"}</p>
   `;

@@ -1,11 +1,7 @@
-const first = document.querySelector<HTMLParagraphElement>(".first");
-const second = document.querySelector<HTMLParagraphElement>(".second");
-const third = document.querySelector<HTMLParagraphElement>(".third");
-const fourth = document.querySelector<HTMLParagraphElement>(".fourth");
-
-const red = document.querySelector(".red");
-const green = document.querySelector(".green");
-
+const displayContent = document.querySelector(
+  ".display--content"
+) as HTMLDivElement;
+const deleteIcon = document.querySelector(".delete--icon") as HTMLOrSVGImageElement
 let display = document.querySelector(".display") as HTMLDivElement;
 let arr: (string | number | undefined)[] = [];
 
@@ -19,17 +15,22 @@ function audioAnswer(answer: boolean): void {
   }
 }
 
-function keyClick(number: number): void {
-  if (arr.length === 4) {
-    console.log(arr.length);
-    submitNumber();
-    updateDisplay();
-  } else {
-    if (arr.length < 4) {
-      padChange(number);
-      updateDisplay();
-    }
+
+function checkNumbers() {
+  if (arr.length > 0) {
+    const deleteIcon = document.querySelector(".delete--icon") as HTMLOrSVGImageElement
+    deleteIcon.style.color = "#752dc7"
+  } else if (arr.length === 0) {
+    deleteIcon.style.color = "#ffffff1a"
   }
+}
+
+function keyClick(number: number): void {
+   if (arr.length < 4) {
+    padChange(number);
+    checkNumbers()
+    updateDisplay();
+   }
 }
 
 function padChange(numberPad: number): void {
@@ -39,23 +40,36 @@ function padChange(numberPad: number): void {
 function deleteNumber(): void {
   arr.pop();
   updateDisplay();
+  checkNumbers()
 }
 
 function submitNumber(): void {
   if (arr.join("") === "1978") {
     audioAnswer(true);
-    display.style.color = "#6DDE1A";
+    const ball = document.querySelectorAll(
+      ".ball"
+    ) as NodeListOf<HTMLDivElement>;
+    ball.forEach((ball) => {
+      ball.style.backgroundColor = "#6DDE1A";
+      ball.style.borderColor = "#6DDE1A";
+    });
     setTimeout(() => {
       arr = [];
-      display.style.color = "#ededed;";
+      checkNumbers()
       updateDisplay();
-    }, 1000);
+    }, 2000);
   } else {
     audioAnswer(false);
-    display.style.color = "red";
+    const ball = document.querySelectorAll(
+      ".ball"
+    ) as NodeListOf<HTMLDivElement>;
+    ball.forEach((ball) => {
+      ball.style.backgroundColor = "red";
+      ball.style.borderColor = "red";
+    });
     setTimeout(() => {
       arr = [];
-      display.style.color = "#ededed;";
+      checkNumbers()
       updateDisplay();
     }, 1000);
   }
@@ -63,20 +77,20 @@ function submitNumber(): void {
 
 function updateDisplay(): void {
   display.innerHTML = `
-  <p class="second">${
+  <p class="display--content">${
     !arr[0] ? "<div class='ball--empty'></div>" : "<div class='ball'></div>"
   }</p>
-              <p class="second">${
+              <p class="display--content">${
                 !arr[1]
                   ? "<div class='ball--empty'></div>"
                   : "<div class='ball'></div>"
               }</p>
-              <p class="second">${
+              <p class="display--content">${
                 !arr[2]
                   ? "<div class='ball--empty'></div>"
                   : "<div class='ball'></div>"
               }</p>
-              <p class="second">${
+              <p class="display--content">${
                 !arr[3]
                   ? "<div class='ball--empty'></div>"
                   : "<div class='ball'></div>"
