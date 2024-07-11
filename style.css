@@ -132,6 +132,11 @@ button:disabled:hover {
     color: #ffffff1a;
     width: 25px;
     cursor: pointer;
+    transition: all 150ms ease;
+}
+
+.submit--icon:hover {
+    color: #ededed;
 }
 
 .icons--bottom {
@@ -155,23 +160,25 @@ button:disabled:hover {
     align-items: center;
 }
 
-.red {
-    width: 20px;
-    height: 20px;
-    border-radius: 50px;
-    background-color: red;
-    margin-bottom: 10px;
-    box-shadow: 0px 0px 10px red;
+.correct--answer {
+   width: 20px;
+   height: 20px;
+   color: #6DDE1A;
+   position: absolute;
+   top: -2%;
+   display: none;
+   animation: fadeIn .1s linear;
 }
 
-.green {
+.wrong--answer {
     width: 20px;
     height: 20px;
-    border-radius: 50px;
-    background-color: green;
-    margin-bottom: 10px;
-    box-shadow: 0px 0px 10px green;
-}
+    color: #752dc7;
+    position: absolute;
+    top: -2%;
+    display: none;
+    animation: fadeIn .1s linear;
+ }
 
 .number {
     background-color: #111111;
@@ -225,6 +232,7 @@ button:disabled:hover {
     width: 12px;
     height: 12px;
     border: 2px solid #ededed;
+    
 }
 
 .ball--empty {
@@ -233,4 +241,49 @@ button:disabled:hover {
     width: 12px;
     height: 12px;
     border: 2px solid #ededed;
+}
+
+@keyframes fadeIn {
+    from   {
+        opacity: 0;
+    } 
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn1 {
+    from   {
+        opacity: 0;
+    } 
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn2 {
+    from   {
+        opacity: 0;
+    } 
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn3 {
+    from   {
+        opacity: 0;
+    } 
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn4 {
+    from   {
+        opacity: 0;
+    } 
+    to {
+        opacity: 1;
+    }
 }
