@@ -1,7 +1,9 @@
 const displayContent = document.querySelector(
   ".display--content"
 ) as HTMLDivElement;
-const deleteIcon = document.querySelector(".delete--icon") as HTMLOrSVGImageElement
+const deleteIcon = document.querySelector(
+  ".delete--icon"
+) as HTMLOrSVGImageElement;
 let display = document.querySelector(".display") as HTMLDivElement;
 let arr: (string | number | undefined)[] = [];
 
@@ -15,22 +17,23 @@ function audioAnswer(answer: boolean): void {
   }
 }
 
-
 function checkNumbers() {
   if (arr.length > 0) {
-    const deleteIcon = document.querySelector(".delete--icon") as HTMLOrSVGImageElement
-    deleteIcon.style.color = "#752dc7"
+    const deleteIcon = document.querySelector(
+      ".delete--icon"
+    ) as HTMLOrSVGImageElement;
+    deleteIcon.style.color = "#752dc7";
   } else if (arr.length === 0) {
-    deleteIcon.style.color = "#ffffff1a"
+    deleteIcon.style.color = "#ffffff1a";
   }
 }
 
 function keyClick(number: number): void {
-   if (arr.length < 4) {
+  if (arr.length < 4) {
     padChange(number);
-    checkNumbers()
+    checkNumbers();
     updateDisplay();
-   }
+  }
 }
 
 function padChange(numberPad: number): void {
@@ -40,7 +43,7 @@ function padChange(numberPad: number): void {
 function deleteNumber(): void {
   arr.pop();
   updateDisplay();
-  checkNumbers()
+  checkNumbers();
 }
 
 function submitNumber(): void {
@@ -55,7 +58,7 @@ function submitNumber(): void {
     });
     setTimeout(() => {
       arr = [];
-      checkNumbers()
+      checkNumbers();
       updateDisplay();
     }, 2000);
   } else {
@@ -64,12 +67,12 @@ function submitNumber(): void {
       ".ball"
     ) as NodeListOf<HTMLDivElement>;
     ball.forEach((ball) => {
-      ball.style.backgroundColor = "red";
-      ball.style.borderColor = "red";
+      ball.style.backgroundColor = "#752dc7";
+      ball.style.borderColor = "#752dc7";
     });
     setTimeout(() => {
       arr = [];
-      checkNumbers()
+      checkNumbers();
       updateDisplay();
     }, 1000);
   }

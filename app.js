@@ -55,8 +55,8 @@ function submitNumber() {
         audioAnswer(false);
         const ball = document.querySelectorAll(".ball");
         ball.forEach((ball) => {
-            ball.style.backgroundColor = "red";
-            ball.style.borderColor = "red";
+            ball.style.backgroundColor = "#752dc7";
+            ball.style.borderColor = "#752dc7";
         });
         setTimeout(() => {
             arr = [];
