@@ -37,7 +37,7 @@ function submitNumber() {
         display.style.color = "#6DDE1A";
         setTimeout(() => {
             arr = [];
-            display.style.color = "white";
+            display.style.color = "#ededed;";
             updateDisplay();
         }, 1000);
     }
@@ -46,17 +46,23 @@ function submitNumber() {
         display.style.color = "red";
         setTimeout(() => {
             arr = [];
-            display.style.color = "white";
+            display.style.color = "#ededed;";
             updateDisplay();
         }, 1000);
     }
 }
 function updateDisplay() {
     display.innerHTML = `
-  <p class="first">${arr[0] || "-"}</p>
-              <p class="second">${arr[1] || "-"}</p>
-              <p class="third">${arr[2] || "-"}</p>
-              <p class="fourth">${arr[3] || "-"}</p>
+  <p class="second">${!arr[0] ? "<div class='ball--empty'></div>" : "<div class='ball'></div>"}</p>
+              <p class="second">${!arr[1]
+        ? "<div class='ball--empty'></div>"
+        : "<div class='ball'></div>"}</p>
+              <p class="second">${!arr[2]
+        ? "<div class='ball--empty'></div>"
+        : "<div class='ball'></div>"}</p>
+              <p class="second">${!arr[3]
+        ? "<div class='ball--empty'></div>"
+        : "<div class='ball'></div>"}</p>
   `;
 }
 updateDisplay();

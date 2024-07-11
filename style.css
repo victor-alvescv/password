@@ -1,47 +1,54 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
 * {
-    font-family: "Anton SC";
+    font-family: "Inter";
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 50px;
-}
+* {
+    font-family: "Inter";
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  
+  body {
+    background-color: black;
+  }
+  
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: #0a0a0a;
+    color: #EDEDED;
+  }
 
 .keypad--wrapper {
-    background: url("./assets/metal.jpg");
-    width: 600px;
-    height: 850px;
+    width: 400px;
     background-repeat: no-repeat;
     display: flex;
-    justify-content: center;
-    border: 40px solid rgb(41, 41, 41);
-    background-size: cover;
+    border: 2px solid rgba(255, 255, 255, 0.082);
     border-radius: 50px;
     flex-direction: column;
     align-items: center;
-    gap: 50px
+    gap: 50px;
 }
 
 .display {
-    width: 400px;
-    height: 100px;
-    background-color: rgb(80, 134, 134);
     font-size: 140px;
     font-family: "Anton SC";
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: #ededed;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
-    gap: 40px;
+    gap: 20px;
+    margin-top: 50px;
 }
 
 .first, .second, .third, .fourth {
@@ -51,15 +58,20 @@ body {
 }
 
 .numbers--wrapper {
-    background-color: rgb(41, 41, 41);
-    height: 500px;
-    width: 400px;
+    background-color: #0a0a0a;
     border-radius: 25px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 30px;
+}
+
+.keypad {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
 }
 
 .number__key {
@@ -69,9 +81,6 @@ body {
 .numbers {
     width: 350px;
     height: 450px;
-    background: url("./assets/metal.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
     border-radius: 5px;
     position: relative;
     margin-bottom: 30px;
@@ -79,19 +88,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.green-red {
-    background-color: rgb(41, 41, 41);
-    width: 200px;
-    left: 21%;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 50px;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
 }
 
 .red {
@@ -113,8 +109,8 @@ body {
 }
 
 .number {
-    background-color: rgb(46, 46, 46);
-    color: white;
+    background-color: #111111;
+    color: #ededed;
     font-size: 30px;
     margin: 5px;
     display: flex;
@@ -124,7 +120,7 @@ body {
     height: 70px;
     cursor: pointer;
     position: relative;
-    border-radius: 10px;
+    border-radius: 50px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
     border: 3px solid transparent;
     transition: all 150ms ease;
@@ -148,11 +144,26 @@ body {
 }
 
 .line {
-    width: 30px;
-    height: 1px;
-    background-color: rgba(255, 255, 255, 0.13);
+    width: 15px;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.034);
     position: absolute;
     bottom: 15%
 }
 
 
+.ball {
+    background-color: #ededed;
+    border-radius: 50px;
+    width: 15px;
+    height: 15px;
+    border: 2px solid #ededed;
+}
+
+.ball--empty {
+    background-color: transparent;
+    border-radius: 50px;
+    width: 15px;
+    height: 15px;
+    border: 2px solid #ededed;
+}
